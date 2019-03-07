@@ -1,0 +1,63 @@
+var MovieSales = "https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/movie-data.json";
+var arrayL =["Blade", "X-Men", "Blade II", "Spider-Man", "Daredevil", "X2: X-Men United", "Hulk", "Kat", "Spider-Man 2", "Blade: Trinity", "Elektra", "Man Thing", "Ghost Rider", "Spider-Man 3", "Fantastic four: Silver Surfer", "Kat 2", "X-Men Origins: Wolverine", "X-Men: first class", "Ghost Rider: Spirit of Vengeance", "Amazing Spider-Man", "Wolverine", "Amazing Spider-Man 2", "Fantastic four",  	"Captain America: Civil War","Deadpool","Deadpool 2", "X-Men: Apokalypsa", "Gambit", "Logan: Wolverine", "Captain America: The First Avenger","Captain America: The Winter Soldier", "Deadpool 2", "X-Force", "Sinister Six", "Iron Man 3", "Captain America: Civil War", "Ultron", "Guardians of the Galaxy Vol. 2", "Guardians of the Galaxy","Guardians of the Galaxy Vol. 3", "Doctor Strange","Avengers: Infinity War"];
+
+function getfilm() {
+
+    var min = 0;
+    var max = arrayL.length - 1;
+    return arrayL[Math.floor(Math.random() * (max - min + 1)) + min];
+}
+
+
+
+$(document).ready(function () {
+    $.get(MovieSales, function makeMyMap(data) {
+              data.children.forEach((d) => {
+            d.children.forEach(element => {
+                if (element.hasOwnProperty('name')) {
+                    if (!arrayL.includes(element.name)) {
+                        arrayL.push(element.name);
+                                           }
+                }
+            });
+        });
+   
+
+    g();
+ });
+    function g() {
+        var j = getfilm();
+       
+        $("#Mtitle").text(j + "\n");
+        $.get(
+            "https://www.omdbapi.com/?t=" + j + "&apikey=e639b4e1",
+            function (data) {
+                console.log(data);
+                $("#text").text(data.Plot);
+                $("#author").text(data.Director);
+                var mscore = data.Metascore;
+                $("#img1").attr("src", data.Poster);
+                if (!isNaN(mscore)) {
+                    $("#hod").text("Metascore: " + "\n" + mscore + "%");
+                    if (mscore < 30) {
+                        $("#hod").css("color", "red");
+                    } else if (mscore < 60) {
+                        $("#hod").css("color", "blue");
+                    } else if (mscore > 60) {
+                        $("#hod").css("color", "green");
+                    }
+                }
+                $("#tweet-quote").attr("href", "https://twitter.com/intent/tweet?text="+data.Plot+"&url=https://codepen.io/vanderdrilu/full/pVeXgw");  
+            });
+      
+  
+     
+    }
+
+
+    $("#new-quote").click(function () {
+        g();
+
+    });
+
+});
