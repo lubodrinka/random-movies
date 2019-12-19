@@ -6,7 +6,7 @@ var arrayL =["Blade", "X-Men", "Blade II", "Spider-Man", "Daredevil", "X2: X-Men
              "Spider-Man: Into the Spider-Verse","Spider-Man: Far From Home",
              "Fantastic four", "Captain America: Civil War","Deadpool","Deadpool 2", "X-Men: Apokalypsa", 
              "Gambit", "Logan: Wolverine", "Captain America: The First Avenger","Captain America: The Winter Soldier", 
-             "Deadpool 2", "X-Force", "Sinister Six", "Iron Man 3", "Captain America: Civil War", "Ultron", 
+             "Deadpool 2", "X-Force", "Sinister Six", "Iron Man 3", "Captain America: Civil War",  
              "Guardians of the Galaxy Vol. 2", "Guardians of the Galaxy","Guardians of the Galaxy Vol. 3", "Doctor Strange",
              "Avengers", "Avengers: Age of Ultron","Avengers: Infinity War", "Avengers: End Game",
              "Starwars: Rogue-one","Star Wars: The Force Awakens","Star Wars: The Last Jedi","Star Wars: The Last Jedi",
