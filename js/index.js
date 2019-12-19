@@ -9,7 +9,8 @@ var arrayL =["Blade", "X-Men", "Blade II", "Spider-Man", "Daredevil", "X2: X-Men
              "Deadpool 2", "X-Force", "Sinister Six", "Iron Man 3", "Captain America: Civil War", "Ultron", 
              "Guardians of the Galaxy Vol. 2", "Guardians of the Galaxy","Guardians of the Galaxy Vol. 3", "Doctor Strange",
              "Avengers", "Avengers: Age of Ultron","Avengers: Infinity War", "Avengers: End Game",
-             "Starwars: Rogue-one","Star Wars: The Force Awakens","Star Wars: The Last Jedi","Star Wars: The Last Jedi"];
+             "Starwars: Rogue-one","Star Wars: The Force Awakens","Star Wars: The Last Jedi","Star Wars: The Last Jedi",
+            "Toy story 4","X-Men: Apocalypse"];
 
 function getfilm() {
 
